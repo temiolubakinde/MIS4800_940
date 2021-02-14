@@ -1,0 +1,65 @@
+﻿@model MIS4800_940.Models.Employees
+
+@{
+    ViewBag.Title = "Details of Employee Record";
+}
+
+<h2>Details of Employee Record</h2>
+
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.areaOfSpeciality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.areaOfSpeciality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfEmployment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfEmployment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.employeesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

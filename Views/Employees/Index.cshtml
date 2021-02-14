@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MIS4800_940.Models.Employees>
+
+@{
+    ViewBag.Title = "Employee Records";
+}
+
+<h2>Employee Records</h2>
+
+<p>
+    @Html.ActionLink("Create New Employee Record", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.areaOfSpeciality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfEmployment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.areaOfSpeciality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfEmployment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.employeesID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.employeesID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.employeesID })
+        </td>
+    </tr>
+}
+
+</table>

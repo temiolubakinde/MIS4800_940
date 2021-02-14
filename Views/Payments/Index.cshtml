@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MIS4800_940.Models.Payment>
+
+@{
+    ViewBag.Title = "Payment Records";
+}
+
+<h2>Payment Records</h2>
+
+<p>
+    @Html.ActionLink("Create New Payment Record", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Patient.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.method)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.insurance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.method)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.insurance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.paymentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.paymentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.paymentID })
+        </td>
+    </tr>
+}
+
+</table>
