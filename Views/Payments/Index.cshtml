@@ -4,12 +4,14 @@
     ViewBag.Title = "Payment Records";
 }
 
-<h2>Payment Records</h2>
 
+<div class=“well”>
+    <h2>Payment Records</h2>
+</div>
 <p>
     @Html.ActionLink("Create New Payment Record", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-bordered table-condensed">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Patient.fullName)
@@ -29,29 +31,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Patient.fullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.amount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.method)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.insurance)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.paymentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.paymentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.paymentID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.fullName)
+            </td>
+            <td class="text-left">
+                @Html.DisplayFor(modelItem => item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td class="text-left">
+                @Html.DisplayFor(modelItem => item.method)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.insurance)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.paymentID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.paymentID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.paymentID })
+            </td>
+        </tr>
+    }
 
 </table>

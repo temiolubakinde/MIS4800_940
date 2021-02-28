@@ -3,55 +3,55 @@
 @{
     ViewBag.Title = "Details of Appointment";
 }
-
-<h2>Details of Patient Appointment</h2>
-
-<div>
-
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Employees)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Employees.fullName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Patient)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Patient.fullName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.dateOfAppointment)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.dateOfAppointment)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.appointmentTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.appointmentTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.apptReason)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.apptReason)
-        </dd>
-
-    </dl>
+<div class=“well”>
+    <h2>Details of Patient Appointment</h2>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.appointmentID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Employees)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Employees.fullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Patient)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Patient.fullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dateOfAppointment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dateOfAppointment)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.appointmentTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.appointmentTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.apptReason)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.apptReason)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.appointmentID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
